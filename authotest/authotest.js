@@ -28,14 +28,19 @@ describe('Test Complex Counter', () => {
        assert.equal('Total: 0',totalResultText)
     });
 
-    it('should the Add Name Field is present', function () {
-        $('Counter Name').isDisplayed();
+    it('should the Enter Counter Title displayed', function () {
+        const arrLabel = $$('label')
+        arrLabel[0].isDisplayed();
+        const title = arrLabel[0].getText();
+        const textExpect = "Edit Counter Title:"
+        assert.equal(textExpect, title);
     });
-    // it('should the Add Name Field has a name "Counter Name"', function () {
-    //     const AddNameFieldText = $('Counter Name').getText();
-    //     assert.equal('Counter Name',AddNameFieldText)
-    //
-    // });
+    it('should button DELETE is displayed', function () {
+        $('.btn-danger.btn.Ripple-parent.delete').isDisplayed();
+        const buttonDelete = $('.btn-danger.btn.Ripple-parent.delete').getText();
+        assert.equal('DELETE',buttonDelete);
+        
+    });
 
 
 });
